@@ -69,6 +69,28 @@ Simply open `index.html` in your browser.
 
 > Experience the YogaWithVish landing page live online.
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="assets/screenshots/home.png" width="90%" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/home-2.png" width="90%" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/home-3.png" width="90%" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/home-4.png" width="90%" />
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/home-5.png" width="90%" />
+</p>
+
 ---
 
 ## 🌐 Deployment
