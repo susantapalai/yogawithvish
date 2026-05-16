@@ -11,8 +11,6 @@
   A modern and responsive yoga landing page designed to inspire mindfulness, wellness, and healthy living.
 </p>
 
----
-
 ## ✨ Features
 
 * 🌿 Clean and modern UI
@@ -29,8 +27,13 @@
 ```bash
 YogaWithVish/
 │
-├── index.html        # Main landing page
-└── README.md         # Project documentation
+├── assets/
+│   └── screenshots/
+│       ├── home.png
+│       └── home-2.png
+│
+├── index.html
+└── README.md
 ```
 
 ---
