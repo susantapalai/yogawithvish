@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YogaWithVish — Transform From Within | Bengaluru</title>
+<meta name="description" content="Private & group yoga sessions with Vishakha in Bengaluru. Specializing in therapeutic yoga, stress recovery, and body transformation. 4.8★ rated. Book your first session.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8975A;
+  --gold-light:#D4B87A;
+  --gold-pale:#F0E8D6;
+  --sage:#4A6741;
+  --sage-light:#7A9B72;
+  --sage-pale:#E8F0E6;
+  --cream:#FAF7F2;
+  --warm-white:#FDFBF8;
+  --charcoal:#1C1C1A;
+  --slate:#3A3A36;
+  --stone:#6B6860;
+  --mist:#B8B5AE;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--warm-white);color:var(--charcoal);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center;transition:all 0.4s ease}
+nav.scrolled{background:rgba(253,251,248,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,151,90,0.15);padding:1rem 4rem}
+.nav-logo{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--charcoal);letter-spacing:0.02em;text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--slate);font-weight:400;transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--charcoal);color:var(--warm-white);padding:0.65rem 1.5rem;border:none;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none}
+.nav-cta:hover{background:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 4rem 4rem;background:var(--cream)}
+.hero-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;font-weight:400}
+.hero-h1{font-family:var(--serif);font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:1.05;color:var(--charcoal);margin-bottom:1rem}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1rem;color:var(--stone);line-height:1.8;max-width:420px;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--charcoal);color:var(--warm-white);padding:1rem 2rem;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--gold)}
+.btn-ghost{background:transparent;color:var(--charcoal);padding:1rem 2rem;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;border:1.5px solid rgba(28,28,26,0.25);cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stat-strip{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(184,151,90,0.2)}
+.hero-stat{display:flex;flex-direction:column;gap:0.25rem}
+.hero-stat-num{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--charcoal)}
+.hero-stat-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone)}
+.hero-right{position:relative;overflow:hidden}
+.hero-visual{width:100%;height:100%;background:linear-gradient(160deg,#E8F0E6 0%,#D4C5B0 60%,#C4A882 100%);display:flex;align-items:center;justify-content:center;position:relative}
+.hero-shape{position:absolute;width:460px;height:600px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3)}
+.hero-quote-card{position:absolute;bottom:2.5rem;left:2rem;right:2rem;background:rgba(253,251,248,0.92);backdrop-filter:blur(8px);border:1px solid rgba(184,151,90,0.2);padding:1.5rem;border-left:3px solid var(--gold)}
+.hero-quote-card p{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--slate);line-height:1.6;margin-bottom:0.5rem}
+.hero-quote-card cite{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone)}
+.hero-emblem{width:140px;height:140px;border-radius:50%;background:var(--sage);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;z-index:2}
+.hero-emblem-num{font-family:var(--serif);font-size:2.5rem;font-weight:300}
+.hero-emblem-text{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.85}
+
+/* MARQUEE */
+.marquee-strip{background:var(--charcoal);padding:0.85rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;animation:marquee 20s linear infinite}
+.marquee-inner span{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);padding:0 2rem}
+.marquee-inner .dot{color:var(--stone)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION BASE */
+section{padding:6rem 4rem}
+.section-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:400}
+.section-h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:1.5rem}
+.section-h2 em{font-style:italic;color:var(--gold)}
+.section-lead{font-size:1rem;color:var(--stone);line-height:1.8;max-width:540px;font-weight:300}
+
+/* ABOUT */
+.about{background:var(--warm-white);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-visual{position:relative}
+.about-frame{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,var(--sage-pale) 0%,var(--gold-pale) 100%);position:relative;overflow:hidden}
+.about-frame-inner{position:absolute;inset:1.5rem;border:1px solid rgba(184,151,90,0.3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem}
+.about-frame-symbol{font-family:var(--serif);font-size:6rem;font-weight:200;color:var(--gold);opacity:0.4;line-height:1}
+.about-frame-text{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--stone);text-align:center;padding:0 2rem}
+.about-badge{position:absolute;bottom:-1rem;right:-1rem;width:100px;height:100px;border-radius:50%;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 12px 40px rgba(184,151,90,0.4)}
+.about-badge-num{font-family:var(--serif);font-size:1.8rem;font-weight:400}
+.about-badge-text{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.9}
+.about-content p{color:var(--stone);line-height:1.9;margin-bottom:1.2rem;font-weight:300;font-size:0.95rem}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.about-value{border-left:2px solid var(--gold);padding-left:1rem}
+.about-value h4{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal);margin-bottom:0.3rem}
+.about-value p{font-size:0.82rem;color:var(--stone);line-height:1.6;margin:0}
+
+/* SERVICES */
+.services{background:var(--cream)}
+.services-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{background:var(--warm-white);border:1px solid rgba(184,151,90,0.15);padding:2.5rem;transition:all 0.4s ease;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.4s ease}
+.service-card:hover{box-shadow:0 20px 60px rgba(0,0,0,0.06);transform:translateY(-4px)}
+.service-card:hover::before{height:100%}
+.service-num{font-family:var(--serif);font-size:2.5rem;font-weight:200;color:var(--gold-pale);margin-bottom:1rem;line-height:1}
+.service-icon{width:44px;height:44px;border-radius:50%;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.service-icon svg{width:20px;height:20px;stroke:var(--sage);fill:none;stroke-width:1.5}
+.service-card h3{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--charcoal);margin-bottom:0.75rem}
+.service-card p{font-size:0.85rem;color:var(--stone);line-height:1.8;font-weight:300;margin-bottom:1.5rem}
+.service-card ul{list-style:none;margin-bottom:2rem}
+.service-card ul li{font-size:0.8rem;color:var(--stone);padding:0.35rem 0;border-bottom:1px solid rgba(0,0,0,0.04);display:flex;align-items:center;gap:0.5rem}
+.service-card ul li::before{content:'—';color:var(--gold);font-size:0.7rem}
+.service-link{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;display:flex;align-items:center;gap:0.5rem;font-weight:400;transition:color 0.3s}
+.service-link:hover{color:var(--gold)}
+.service-link::after{content:'→';transition:transform 0.3s}
+.service-link:hover::after{transform:translateX(4px)}
+
+/* PROCESS */
+.process{background:var(--charcoal)}
+.process .section-label{color:var(--gold-light)}
+.process .section-h2{color:var(--warm-white)}
+.process .section-lead{color:var(--mist)}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:4rem;background:rgba(255,255,255,0.06)}
+.process-step{background:var(--charcoal);padding:2.5rem 2rem;position:relative;transition:background 0.3s}
+.process-step:hover{background:rgba(255,255,255,0.04)}
+.process-step-num{font-family:var(--serif);font-size:3rem;font-weight:200;color:rgba(184,151,90,0.3);margin-bottom:1.5rem;line-height:1}
+.process-step h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--warm-white);margin-bottom:0.75rem}
+.process-step p{font-size:0.8rem;color:var(--mist);line-height:1.7;font-weight:300}
+.process-step-line{position:absolute;top:2.5rem;right:0;width:1px;height:40px;background:rgba(184,151,90,0.2)}
+
+/* RESULTS */
+.results{background:var(--cream);padding:6rem 4rem}
+.results-header{text-align:center;margin-bottom:4rem}
+.results-header .section-lead{margin:0 auto}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.result-card{background:var(--warm-white);border:1px solid rgba(184,151,90,0.12);padding:2.5rem}
+.result-condition{display:inline-flex;align-items:center;gap:0.5rem;background:var(--sage-pale);border:1px solid rgba(74,103,65,0.15);padding:0.3rem 0.8rem;margin-bottom:1.5rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage)}
+.result-card blockquote{font-family:var(--serif);font-size:1.05rem;font-weight:300;font-style:italic;color:var(--slate);line-height:1.7;margin-bottom:1.5rem;border:none;padding:0}
+.result-meta{display:flex;align-items:center;gap:0.75rem;padding-top:1.25rem;border-top:1px solid rgba(0,0,0,0.05)}
+.result-avatar{width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:0.85rem;color:white;font-weight:500;flex-shrink:0}
+.result-name{font-size:0.8rem;color:var(--charcoal);font-weight:500}
+.result-stars{color:var(--gold);font-size:0.75rem;letter-spacing:0.05em}
+
+/* DIFFERENTIATORS */
+.why{background:var(--warm-white)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.why-left{padding-right:4rem;display:flex;flex-direction:column;justify-content:center}
+.why-right{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(184,151,90,0.1)}
+.why-item{background:var(--warm-white);padding:2.5rem 2rem}
+.why-item-icon{font-size:1.5rem;margin-bottom:1rem;color:var(--gold)}
+.why-item h4{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--charcoal);margin-bottom:0.5rem}
+.why-item p{font-size:0.82rem;color:var(--stone);line-height:1.7;font-weight:300}
+
+/* TESTIMONIALS SLIDER */
+.testimonials{background:var(--sage);padding:6rem 4rem}
+.testimonials .section-label{color:rgba(255,255,255,0.6)}
+.testimonials .section-h2{color:white}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.testi-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:2rem;transition:all 0.3s}
+.testi-card:hover{background:rgba(255,255,255,0.12)}
+.testi-stars{color:var(--gold-light);font-size:0.75rem;letter-spacing:0.15em;margin-bottom:1.25rem}
+.testi-quote{font-family:var(--serif);font-size:1rem;font-style:italic;color:rgba(255,255,255,0.9);line-height:1.7;margin-bottom:1.5rem;font-weight:300}
+.testi-author{display:flex;align-items:center;gap:0.75rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.25rem}
+.testi-avi{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:0.85rem;color:white;flex-shrink:0}
+.testi-name{font-size:0.8rem;color:rgba(255,255,255,0.9);font-weight:500}
+.testi-role{font-size:0.72rem;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+
+/* FAQ */
+.faq{background:var(--cream)}
+.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:6rem;margin-top:3rem;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid rgba(184,151,90,0.2);overflow:hidden}
+.faq-q{padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:1rem}
+.faq-q h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--charcoal);line-height:1.4}
+.faq-toggle{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(184,151,90,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:1rem;transition:all 0.3s}
+.faq-item.open .faq-toggle{background:var(--gold);color:white;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding-bottom:1.5rem;font-size:0.88rem;color:var(--stone);line-height:1.8;font-weight:300}
+.faq-contact{background:var(--warm-white);border:1px solid rgba(184,151,90,0.15);padding:2rem;position:sticky;top:7rem}
+.faq-contact h3{font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:1rem;color:var(--charcoal)}
+.faq-contact p{font-size:0.85rem;color:var(--stone);line-height:1.7;margin-bottom:1.5rem;font-weight:300}
+.faq-contact a{display:block;text-decoration:none;color:var(--charcoal);font-size:0.8rem;padding:0.6rem 0;border-bottom:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;gap:0.75rem;transition:color 0.3s}
+.faq-contact a:hover{color:var(--gold)}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--charcoal) 0%,var(--slate) 100%);padding:8rem 4rem;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'☯';font-size:20rem;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.03;color:white;line-height:1;pointer-events:none}
+.cta-banner .section-label{color:var(--gold-light)}
+.cta-banner .section-h2{color:white;margin:0 auto 1.5rem;max-width:600px}
+.cta-banner .section-lead{color:var(--mist);margin:0 auto 2.5rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-banner .btn-primary{background:var(--gold);color:var(--charcoal)}
+.cta-banner .btn-primary:hover{background:var(--gold-light)}
+.cta-banner .btn-ghost{border-color:rgba(255,255,255,0.3);color:white}
+.cta-banner .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:4rem 4rem 2rem;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.footer-brand .nav-logo{display:block;margin-bottom:1rem;font-size:1.5rem}
+.footer-brand p{font-size:0.82rem;color:var(--mist);line-height:1.7;max-width:260px;font-weight:300}
+.footer-brand .tagline{font-family:var(--serif);font-style:italic;color:var(--gold-light);margin-top:0.75rem;font-size:0.9rem}
+.footer-col h5{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.25rem;font-weight:400}
+.footer-col a{display:block;font-size:0.82rem;color:var(--mist);text-decoration:none;margin-bottom:0.6rem;transition:color 0.3s;font-weight:300}
+.footer-col a:hover{color:white}
+.footer-newsletter p{font-size:0.82rem;color:var(--mist);line-height:1.6;margin-bottom:1rem;font-weight:300}
+.newsletter-form{display:flex;gap:0.5rem}
+.newsletter-form input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:white;padding:0.65rem 1rem;font-family:var(--sans);font-size:0.8rem;outline:none}
+.newsletter-form input::placeholder{color:var(--stone)}
+.newsletter-form input:focus{border-color:rgba(184,151,90,0.4)}
+.newsletter-form button{background:var(--gold);border:none;color:var(--charcoal);padding:0.65rem 1rem;cursor:pointer;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;font-family:var(--sans);font-weight:500;transition:background 0.3s}
+.newsletter-form button:hover{background:var(--gold-light)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;flex-wrap:gap;gap:1rem}
+.footer-bottom p{font-size:0.75rem;color:var(--stone)}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:0.72rem;color:var(--stone);text-decoration:none;transition:color 0.3s}
+.footer-legal a:hover{color:white}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--warm-white);border-top:1px solid rgba(184,151,90,0.1);border-bottom:1px solid rgba(184,151,90,0.1);padding:3rem 4rem}
+.trust-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;align-items:center;text-align:center}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.trust-item-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--charcoal);line-height:1}
+.trust-item-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone)}
+.trust-item-divider{width:1px;background:rgba(184,151,90,0.2);height:60px;margin:0 auto}
+
+/* FADE IN ANIMATION */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  nav.scrolled{padding:0.75rem 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:7rem 1.5rem 3rem}
+  .hero-right{min-height:50vh}
+  section{padding:4rem 1.5rem}
+  .about{grid-template-columns:1fr}
+  .services-header{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .results-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .why-left{padding-right:0;margin-bottom:2rem}
+  .why-right{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .cta-banner{padding:5rem 1.5rem}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .trust-inner{grid-template-columns:1fr 1fr}
+  .trust-item-divider{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Yoga<span>WithVish</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Sessions</a></li>
+    <li><a href="#process">Journey</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+  </ul>
+  <a href="#book" class="nav-cta">Book a Session</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left fade-up">
+    <p class="hero-eyebrow">Bengaluru · Est. 2020 · 4.8★ Rated</p>
+    <h1 class="hero-h1">Where the body<br>finds its <em>quiet</em><br>strength.</h1>
+    <p class="hero-sub">Personalised yoga instruction designed for real life — not the studio. Whether you carry stress, chronic pain, or simply need a reset, Vishakha guides you back to yourself.</p>
+    <div class="hero-actions">
+      <a href="#book" class="btn-primary">Begin Your Practice</a>
+      <a href="#about" class="btn-ghost">Meet Vishakha</a>
+    </div>
+    <div class="hero-stat-strip">
+      <div class="hero-stat">
+        <span class="hero-stat-num">200+</span>
+        <span class="hero-stat-label">Students Guided</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">4.8★</span>
+        <span class="hero-stat-label">Verified Rating</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5+</span>
+        <span class="hero-stat-label">Years Teaching</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-shape"></div>
+      <div class="hero-emblem">
+        <span class="hero-emblem-num">☯</span>
+        <span class="hero-emblem-text">Mind · Body · Breath</span>
+      </div>
+    </div>
+    <div class="hero-quote-card">
+      <p>"Finest yoga teacher who teaches you life as well. The transformation I experienced was beyond physical."</p>
+      <cite>— Verified Google Review</cite>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>Therapeutic Yoga</span><span class="dot">·</span>
+    <span>Stress Recovery</span><span class="dot">·</span>
+    <span>Migraine Relief</span><span class="dot">·</span>
+    <span>Body Flexibility</span><span class="dot">·</span>
+    <span>Mindful Movement</span><span class="dot">·</span>
+    <span>Personal Sessions</span><span class="dot">·</span>
+    <span>Group Classes</span><span class="dot">·</span>
+    <span>Bengaluru · Sarjapur Road</span><span class="dot">·</span>
+    <span>Therapeutic Yoga</span><span class="dot">·</span>
+    <span>Stress Recovery</span><span class="dot">·</span>
+    <span>Migraine Relief</span><span class="dot">·</span>
+    <span>Body Flexibility</span><span class="dot">·</span>
+    <span>Mindful Movement</span><span class="dot">·</span>
+    <span>Personal Sessions</span><span class="dot">·</span>
+    <span>Group Classes</span><span class="dot">·</span>
+    <span>Bengaluru · Sarjapur Road</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip fade-up">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-item-num">33+</span>
+      <span class="trust-item-label">Five-Star Reviews</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-num">4.8</span>
+      <span class="trust-item-label">Google Rating</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-num">200+</span>
+      <span class="trust-item-label">Students Transformed</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-num">∞</span>
+      <span class="trust-item-label">Ongoing Support</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual fade-up">
+    <div class="about-frame">
+      <div class="about-frame-inner">
+        <div class="about-frame-symbol">☯</div>
+        <p class="about-frame-text">"She doesn't just teach postures — she teaches you how to live in your body with grace."</p>
+      </div>
+    </div>
+    <div class="about-badge">
+      <span class="about-badge-num">4.8</span>
+      <span class="about-badge-text">★ Rating</span>
+    </div>
+  </div>
+  <div class="about-content fade-up">
+    <p class="section-label">The Philosophy</p>
+    <h2 class="section-h2">Yoga as a <em>living</em> practice, not a performance.</h2>
+    <p>Vishakha — known warmly to her students as Vish — believes yoga was never meant to belong only to the flexible, the disciplined, or the spiritually inclined. It belongs to anyone willing to show up.</p>
+    <p>Based at Suncity Gloria on Sarjapur Main Road, Bengaluru, her studio has become a quiet refuge for professionals managing chronic stress, students navigating anxiety, and individuals seeking real healing — not just physical fitness.</p>
+    <p>Her approach is unhurried, deeply attentive, and rooted in the conviction that transformation happens when you stop performing and start listening — to your breath, your body, and your own innate wisdom.</p>
+    <div class="about-values">
+      <div class="about-value">
+        <h4>Therapeutic Depth</h4>
+        <p>Every session addresses the whole person, not just the pose.</p>
+      </div>
+      <div class="about-value">
+        <h4>Genuine Patience</h4>
+        <p>No student is ever rushed or made to feel behind.</p>
+      </div>
+      <div class="about-value">
+        <h4>Real Results</h4>
+        <p>From migraine relief to full-body strength — outcomes you can feel.</p>
+      </div>
+      <div class="about-value">
+        <h4>Lasting Practice</h4>
+        <p>You leave knowing how to practice with or without her.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header fade-up">
+    <div>
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-h2">Sessions shaped<br>around <em>your life.</em></h2>
+    </div>
+    <p class="section-lead">Every offering is designed for a different chapter of your wellness journey — whether you're beginning, returning, or recovering.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-num">01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v10M8 11l4-4 4 4"/></svg>
+      </div>
+      <h3>Private Sessions</h3>
+      <p>One-on-one instruction tailored entirely to your goals, limitations, and pace. The most personal way to begin.</p>
+      <ul>
+        <li>Full posture & breath assessment</li>
+        <li>Custom sequence design</li>
+        <li>Therapeutic & corrective focus</li>
+        <li>Flexible scheduling</li>
+      </ul>
+      <a href="#book" class="service-link">Enquire About Private Sessions</a>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="2"/><circle cx="15" cy="7" r="2"/><path d="M5 19c0-3.3 2.7-6 6-6h2c3.3 0 6 2.7 6 6"/></svg>
+      </div>
+      <h3>Group Classes</h3>
+      <p>Practise alongside a warm, supportive community. Mornings that feel like a ritual, not a chore.</p>
+      <ul>
+        <li>Small groups (≤8 students)</li>
+        <li>Mixed-level friendly</li>
+        <li>Builds accountability</li>
+        <li>Energising community space</li>
+      </ul>
+      <a href="#book" class="service-link">View Class Schedule</a>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Therapeutic Programs</h3>
+      <p>Structured 4–8 week programs for specific conditions: migraine, anxiety, back pain, or postural imbalance.</p>
+      <ul>
+        <li>Condition-specific sequencing</li>
+        <li>Progress check-ins</li>
+        <li>Home practice guidance</li>
+        <li>Lifestyle integration support</li>
+      </ul>
+      <a href="#book" class="service-link">Start a Program</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="fade-up" style="max-width:600px">
+    <p class="section-label">Your Journey</p>
+    <h2 class="section-h2">Five steps from <em>interest</em> to transformation.</h2>
+    <p class="section-lead">A clear, unhurried path — because the best practice is one you'll actually sustain.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step fade-up">
+      <div class="process-step-num">01</div>
+      <h3>Discovery Call</h3>
+      <p>A free 15-minute conversation to understand your history, goals, and whether we're the right fit.</p>
+      <div class="process-step-line"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">02</div>
+      <h3>Assessment Session</h3>
+      <p>Your first class doubles as a gentle assessment — posture, breath, and body awareness mapped with care.</p>
+      <div class="process-step-line"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">03</div>
+      <h3>Personalised Plan</h3>
+      <p>A bespoke sequence and cadence designed specifically for your body, schedule, and intention.</p>
+      <div class="process-step-line"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">04</div>
+      <h3>Consistent Practice</h3>
+      <p>Weekly sessions — in studio or at home — building skill, strength, and inner stillness together.</p>
+      <div class="process-step-line"></div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="process-step-num">05</div>
+      <h3>Evolving Mastery</h3>
+      <p>As you grow, so does your practice. Ongoing refinement, new challenges, and deepening self-knowledge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="results-header fade-up">
+    <p class="section-label">Student Stories</p>
+    <h2 class="section-h2">Real bodies. Real <em>results.</em></h2>
+    <p class="section-lead">Transformations that go far beyond the mat — into how people live, sleep, move, and feel every single day.</p>
+  </div>
+  <div class="results-grid">
+    <div class="result-card fade-up">
+      <div class="result-condition">✦ Migraine & Stress Recovery</div>
+      <blockquote>"For a long time I was struggling with migraines exacerbated by stress — dizziness, a heavy head. Vishakha's approach addressed the root cause rather than the symptom. I'm a different person now."</blockquote>
+      <div class="result-meta">
+        <div class="result-avatar">PS</div>
+        <div>
+          <p class="result-name">Puspanjali S.</p>
+          <p class="result-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="result-condition">✦ Fitness & Flexibility</div>
+      <blockquote>"I feel much stronger, lighter, and more energetic. Her sessions have significantly improved my overall fitness and body flexibility in ways I genuinely didn't think were possible for me."</blockquote>
+      <div class="result-meta">
+        <div class="result-avatar">AR</div>
+        <div>
+          <p class="result-name">Akshita R.</p>
+          <p class="result-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="result-condition">✦ General Wellbeing</div>
+      <blockquote>"The sessions are well-paced, relaxing, and energising at the same time. She explains each pose clearly and encourages everyone to go at their own pace. I would highly recommend for all levels."</blockquote>
+      <div class="result-meta">
+        <div class="result-avatar">AB</div>
+        <div>
+          <p class="result-name">Amruta B.</p>
+          <p class="result-stars">★★★★★</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-left fade-up">
+      <p class="section-label">Why Vishakha</p>
+      <h2 class="section-h2">Not just <em>classes.</em><br>A companion<br>on the path.</h2>
+      <p class="section-lead" style="margin-bottom:2rem">Students describe her as someone who pushes and motivates while making you feel completely at ease. That rare combination is what makes the difference.</p>
+      <a href="#book" class="btn-primary">Experience It Yourself</a>
+    </div>
+    <div class="why-right fade-up">
+      <div class="why-item">
+        <div class="why-item-icon">◈</div>
+        <h4>Deeply Personalised</h4>
+        <p>No two students receive the same approach. Your body, your history, your goals — everything shapes the practice.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-icon">◎</div>
+        <h4>Therapeutically Informed</h4>
+        <p>Working with health conditions is a speciality, not an afterthought. Migraine, anxiety, back pain — all welcome.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-icon">◉</div>
+        <h4>Quietly Motivating</h4>
+        <p>She pushes you — but never beyond your capacity. The encouragement is real, the environment is safe.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item-icon">◐</div>
+        <h4>Life-Changing Consistency</h4>
+        <p>Students stay for years, not weeks. The transformation deepens with time, and Vishakha holds the space for that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <p class="section-label">33 Verified Reviews</p>
+  <h2 class="section-h2">What students <em>feel</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"She pushes and motivates — and you will love her company. I've tried many instructors but Vishakha has a rare gift for making you feel both challenged and completely cared for."</p>
+      <div class="testi-author">
+        <div class="testi-avi">RK</div>
+        <div>
+          <p class="testi-name">Rohini K.</p>
+          <p class="testi-role">IT Professional, Bengaluru</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"Finest yoga teacher who teaches you life as well. She doesn't just correct your asanas — she helps you understand why you hold tension where you do. Completely transformative."</p>
+      <div class="testi-author">
+        <div class="testi-avi">SM</div>
+        <div>
+          <p class="testi-name">Sunita M.</p>
+          <p class="testi-role">Homemaker & Wellness Seeker</p>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"I would highly recommend her classes for both beginners and experienced. Her patience and attention to detail is something I've never found in any studio class — truly one of a kind."</p>
+      <div class="testi-author">
+        <div class="testi-avi">PD</div>
+        <div>
+          <p class="testi-name">Priya D.</p>
+          <p class="testi-role">Software Engineer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="section-label fade-up">Common Questions</p>
+  <h2 class="section-h2 fade-up">Everything you<br>need to <em>know.</em></h2>
+  <div class="faq-grid">
+    <div class="faq-contact fade-up">
+      <h3>Still wondering?</h3>
+      <p>Vishakha is happy to answer any questions before you commit to your first session. Reach out directly.</p>
+      <a href="tel:+919845052643">📞 +91 98450 52643</a>
+      <a href="https://maps.google.com/?q=Suncity+Gloria+Sarjapur+Bengaluru" target="_blank">📍 Suncity Gloria, Sarjapur Road</a>
+      <a href="https://g.co/kgs/yogawithvish" target="_blank">⭐ View All 33 Reviews</a>
+      <br>
+      <a href="#book" class="btn-primary" style="display:inline-block;margin-top:1rem">Book a Session</a>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>I've never done yoga before. Is this right for me?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><p>Absolutely. Many of Vishakha's most transformed students arrived with no prior experience whatsoever. She meets each person exactly where they are — no flexibility, fitness level, or background required. The first session is always an introduction, never a test.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>I have a health condition. Can I still attend?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><p>Yes — and you're particularly welcome. Therapeutic work is a core strength of Vishakha's practice. Students have found relief from migraines, chronic back pain, anxiety, stress, and postural issues. Simply share your history during the discovery call and the practice will be shaped accordingly.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>What's the difference between private and group sessions?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><p>Private sessions offer fully personalised instruction with no compromise — sequences are built entirely around your needs. Group classes offer community energy and are kept small (≤8 students) so you still receive genuine individual attention. Many students do both.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>Where are you located and what are the timings?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><p>The studio is located inside Suncity Gloria Apartments, Sarjapur Main Road, opposite Decathlon, Carmelaram, Bengaluru. Morning sessions open at 7:30 AM on weekdays. For current schedule and weekend availability, please call or send a message.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>How long before I see results?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><p>Most students notice something within the first two to three sessions — usually a sense of calm and improved breath awareness. Physical changes such as increased flexibility, reduced pain, and better posture typically emerge within 4–6 weeks of consistent practice. Lasting transformation is a few months in the making — and worth every session.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>How do I get started?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a"><p>Simply call +91 98450 52643 or click "Begin Your Practice" to send an enquiry. Vishakha will personally respond to discuss your goals and book your first session. There's no commitment required from the first conversation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="book">
+  <p class="section-label">Begin Today</p>
+  <h2 class="section-h2 fade-up">Your practice is waiting.<br><em>Start where you are.</em></h2>
+  <p class="section-lead fade-up">A single session can change how you carry yourself through the world. First consultations are free. There's nothing to lose — and everything to feel.</p>
+  <div class="cta-actions fade-up">
+    <a href="tel:+919845052643" class="btn-primary">Call +91 98450 52643</a>
+    <a href="https://maps.google.com/?q=Suncity+Gloria+Sarjapur+Bengaluru" target="_blank" class="btn-ghost">Get Directions</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">Yoga<span style="color:var(--gold)">WithVish</span></a>
+      <p>A sanctuary for mindful movement in Bengaluru. Helping people recover, strengthen, and reconnect since 2020.</p>
+      <p class="tagline">"Where the body finds its quiet strength."</p>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="#about">About Vishakha</a>
+      <a href="#services">Sessions & Programs</a>
+      <a href="#process">Your Journey</a>
+      <a href="#testimonials">Student Stories</a>
+      <a href="#faq">FAQs</a>
+    </div>
+    <div class="footer-col">
+      <h5>Visit</h5>
+      <a href="#">Suncity Gloria Apartments</a>
+      <a href="#">Sarjapur Main Road</a>
+      <a href="#">Opposite Decathlon</a>
+      <a href="#">Carmelaram, Bengaluru</a>
+      <a href="#">Karnataka 560035</a>
+    </div>
+    <div class="footer-col footer-newsletter">
+      <h5>Stay Connected</h5>
+      <p>Gentle notes on practice, breath, and conscious living — delivered occasionally.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email">
+        <button>Join</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 YogaWithVish · Bengaluru, India · All Rights Reserved</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="tel:+919845052643">+91 98450 52643</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll nav
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+});
+
+// FAQ accordion
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// Fade on scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('visible');
+  });
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
